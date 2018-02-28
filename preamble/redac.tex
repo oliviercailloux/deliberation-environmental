@@ -1,7 +1,8 @@
-\newcommand{\commentOC}[1]{}%{\small\color{blue}{\selectlanguage{french}$\big[$OC: #1$\big]$}}}
-\newcommand{\commentYM}[1]{}%{\small\color{red}{\selectlanguage{french}$\big[$YM: #1$\big]$}}}
-\newcommand{\innote}[1]{{\scriptsize{#1}}}
+\definecolor{darkgreen}{rgb}{0,0.6,0}
+\newcommand{\commentOC}[1]{{\small\color{blue}{\selectlanguage{french}$\big[$OC: #1$\big]$}}}
+%\newcommand{\commentOC}[1]{{\selectlanguage{french}{\todo{OC : #1}}}}
 %Or: \todo[color=green!40]
+\newcommand{\innote}[1]{{\scriptsize{#1}}}
 
 %this probably requires outdated float package, see doc KomaScript for an alternative.
 % \newfloat{program}{t}{lop}
@@ -42,27 +43,18 @@
 \crefname{examplex}{example}{examples}% I wonder why this is unnecessary in case of singular
 \crefname{condition}{condition}{conditions}
 
-%trickery allowing use of \qedhere and the like.
-%\newcommand{\xqed}[1]{%
-%    \leavevmode\unskip\penalty9999 \hbox{}\nobreak\hfill
-%    \quad\hbox{#1}}
-%\AtEndEnvironment{example}{
-%	\xqed{$\triangle$}%
-%}
-%\AtEndEnvironment{proof}{
-%	\qed%
-%}
-
 %which line breaks are chosen: accept worse lines, therefore reducing risk of overfull lines. Default = 200
 \tolerance=2000
 %accept overfull hbox up to...
 \hfuzz=2cm
 %reduces verbosity about the bad line breaks
 \hbadness 5000
+%reduces verbosity about the underful vboxes
+\vbadness=1300
 %sloppy sets tolerance to 9999
 \apptocmd{\sloppy}{\hbadness 10000\relax}{}{}
 
-\bibliographystyle{abbrvnat-nourl}
+\bibliographystyle{abbrvnat}
 %or \bibliographystyle{apalike} for presentations?
 
 %doi package uses old-style dx.doi url, see 3.8 DOI system Proxy Server technical details, “Users may resolve DOI names that are structured to use the DOI system Proxy Server (http://doi.org (preferred) or http://dx.doi.org).”, https://www.doi.org/doi_handbook/3_Resolution.html
@@ -79,6 +71,19 @@
 \newcommand{\mkkOK}{\checkmark}%\color{green}{\checkmark}
 \newcommand{\mkkREQ}{\ding{53}}%requires pifont?%\color{green}{\checkmark}
 \newcommand{\mkkNO}{}%\text{\color{red}{\textsf{X}}}
+
+\newlength{\xdescwd}
+\makeatletter
+\NewEnviron{xdesc}{%
+  \setbox0=\vbox{\hbadness=\@M \global\xdescwd=0pt
+    \def\item[##1]{%
+      \settowidth\@tempdima{\textbf{##1}:}%
+      \ifdim\@tempdima>\xdescwd \global\xdescwd=\@tempdima\fi}
+  \BODY}
+  \begin{description}[leftmargin=\dimexpr\xdescwd+.5em\relax,
+    labelindent=0pt,labelsep=.5em,
+    labelwidth=\xdescwd,align=left]\BODY\end{description}}
+\makeatother
 
 \makeatletter
 \newcommand{\boldor}[2]{%
@@ -101,13 +106,30 @@
 %TODO
 % \newcommand{\textstyleElProm}[1]{{\rmfamily\textsc{#1}}} 
 
-\newcommand{\txtlaxiom}{$\alllang$\hyp{}axiom}
-\newcommand{\txtlaxioms}{$\alllang$\hyp{}axioms}
-\newcommand{\laxiomatisation}{$\alllang$\hyp{}axiomatisation}
-\newcommand{\laxiomatization}{$\alllang$\hyp{}axiomatization}
-%bold. Requires special command for math bold cal!
-\newcommand{\laxiomatisationbd}{$\mathbfcal{L}$\textbf{\hyp{}axiomatisation}}
-%\newcommand{\laxiomatisationtitle}{\texorpdfstring{$\alllang$\hyp{}Axiomatisation}{L\hyp{}Axiomatisation}}%Does not work because of AAMAS font switching command (tries to typeset it using ptm font), so we should use something like {\usefont{EU1}{lmr}{m}{n}©} but manually select the right font size and weight (which I ignore).
-\newcommand{\laxiomatisationtitle}{\texorpdfstring{{\large$\mathcal{L}$}\hyp{}Axiomatisation}{ℒ\hyp{}Axiomatisation}}
-%\commentUE{Should we maybe write $\ell$-axiom rather than l-axiom, for better readability (to avoid ell being read as one)? Or we could even write $\mathcal{L}$-axiom, to have an explicit reference to the language in which the axiom is expressed?}
+\newunicodechar{ℕ}{\mathbb{N}}
+\newunicodechar{ℝ}{\mathbb{R}}
+\newunicodechar{−}{\ifmmode{-}\else\textminus\fi}
+\newunicodechar{≠}{\ensuremath{\neq}}
+\newunicodechar{≤}{\ensuremath{\leq}}
+\newunicodechar{≥}{\ensuremath{\geq}}
+\newunicodechar{≻}{\succ}
+\newunicodechar{⊁}{\nsucc}
+\newunicodechar{⪰}{\succeq}
+\newunicodechar{▷}{\triangleright}
+\newunicodechar{⋫}{\ntriangleright}
+\newunicodechar{→}{\ifmmode\rightarrow\else\textrightarrow\fi}
+\newunicodechar{⟼}{\ifmmode\longmapsto\else\textlongmapsto\fi}%untested
+\newunicodechar{⇒}{\ensuremath{\Rightarrow}}
+\newunicodechar{⇏}{\ensuremath{\nRightarrow}}
+\newunicodechar{⇔}{\ensuremath{\Leftrightarrow}}
+\newunicodechar{∪}{\cup}
+\newunicodechar{∩}{\cap}
+\newunicodechar{∧}{\land}
+\newunicodechar{∨}{\lor}
+\newunicodechar{¬}{\ifmmode\lnot\else\textlnot\fi}
+\newunicodechar{…}{\ifmmode\ldots\else\textellipsis\fi}
+\newunicodechar{×}{\ifmmode\times\else\texttimes\fi}
+\newunicodechar{γ}{\ensuremath{\gamma}}
+\newunicodechar{δ}{\ensuremath{\delta}}
+\newunicodechar{□}{\Box}
 

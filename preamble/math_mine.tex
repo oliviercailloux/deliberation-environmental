@@ -26,7 +26,6 @@
 %finite powerset
 \newcommand{\fpowerset}[1]{\mathscr{P}_\textnormal{finite}(#1)}
 %powerset without zero
-\newcommand{\powersetz}[1]{\mathscr{P}_\emptyset(#1)}
 \newcommand{\powersetsize}[2][j]{\mathscr{P}_{\textnormal{size } ≤ #1}(#2)}
 
 %logic atom
@@ -75,12 +74,12 @@
 
 %MCDA+Arg
 \newcommand{\dm}{d}
-\newcommand{\ileadsto}{\mathbin{\rightcurvedarrow}}
-\newcommand{\nileadsto}{\mathbin{\not\rightcurvedarrow}}%\nrightarrow}
-\newcommand{\ileadstoinv}{\mathbin{\rightcurvedarrow^{-1}}}
-\newcommand{\ileadstor}[1]{\mathbin{\restr{\rightcurvedarrow}{#1}}}
-\newcommand{\mleadsto}[1][\eta]{\mathbin{\rightcurvedarrow_{#1}}}
-\newcommand{\mleadstoinv}{\mathbin{\rightcurvedarrow_\eta^{-1}}}
+\newcommand{\ileadsto}{\mathbin{\rightsquigarrow}}
+\newcommand{\nileadsto}{\mathbin{\not\rightsquigarrow}}%\nrightarrow}
+\newcommand{\ileadstoinv}{\mathbin{\rightsquigarrow^{-1}}}
+\newcommand{\ileadstor}[1]{\mathbin{\restr{\rightsquigarrow}{#1}}}
+\newcommand{\mleadsto}[1][\eta]{\mathbin{\rightsquigarrow_{#1}}}
+\newcommand{\mleadstoinv}{\mathbin{\rightsquigarrow_\eta^{-1}}}
 \newcommand{\ibeats}{\mathbin{\vartriangleright}}
 \newcommand{\ibeatse}{\mathbin{\vartriangleright_\exists}}
 \newcommand{\ibeatsst}{\mathbin{\vartriangleright_\forall}}
