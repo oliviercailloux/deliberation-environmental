@@ -1,8 +1,15 @@
 \RequirePackage{amsmath}
 \RequirePackage[l2tabu, orthodox]{nag}
-\documentclass[smallextended,nospthms,natbib]{svjour3}
-\makeatletter \let\cl@chapter\relax \makeatother
-\smartqed  % flush right qed marks, e.g. at end of proof
+%\documentclass[smallextended,nospthms,natbib]{svjour3}
+\documentclass[version=last, pagesize, twoside=off, bibliography=totoc, DIV=calc, fontsize=14pt, a4paper, french, english]{scrartcl}
+\newcommand{\institute}[1]{}
+\newcommand{\keywords}[1]{}
+\newenvironment{acknowledgements}{
+	\section*{Acknowledgements}
+}{
+}
+%\makeatletter \let\cl@chapter\relax \makeatother
+%\smartqed  % flush right qed marks, e.g. at end of proof
 \input{preamble/packages}
 \input{preamble/math_basics}
 \input{preamble/math_mine}
