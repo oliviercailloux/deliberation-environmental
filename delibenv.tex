@@ -1,7 +1,7 @@
 \RequirePackage{amsmath}
 \RequirePackage[l2tabu, orthodox]{nag}
 %\documentclass[smallextended,nospthms,natbib]{svjour3}
-\documentclass[version=last, pagesize, twoside=off, bibliography=totoc, DIV=calc, fontsize=14pt, a4paper, french, english]{scrartcl}
+\documentclass[version=3.21, pagesize, twoside=off, bibliography=totoc, DIV=calc, fontsize=12pt, a4paper, french, english]{scrartcl}
 \newcommand{\institute}[1]{}
 \newcommand{\keywords}[1]{}
 \newenvironment{acknowledgements}{
@@ -14,7 +14,6 @@
 \input{preamble/math_basics}
 \input{preamble/math_mine}
 \input{preamble/redac}
-\input{preamble/draw}
 \input{preamble/acronyms}
 
 %\journalname{}
@@ -205,7 +204,7 @@ Finally, we introduce two conditions on the size of chains of arguments and coun
 We talk about a chain of length $k$ in $\ibeatse$ to refer to a finite sequence $\ar_i$ in $\allargs$, $1 ≤ i ≤ k$, such that $\ar_i \ibeatse \ar_{i + 1}$ for $1 ≤ i ≤ k - 1$. An infinite chain is an infinite sequence $\ar_i$ such that $\ar_i \ibeatse \ar_{i + 1}$ for all $i \in \N$. (We do not mandate that a chain should be transitively closed.) 
 
 \begin{condition}[Bounded breadth]
-\label{def:B.br}	
+\label{def:B.br}
 A decision situation $(T, \allargs, {\ileadsto}, {\ibeatse}, {\nibeatse})$ has a \emph{bounded breadth} iff there is no argument that is attacked by an infinite number of counter-arguments.
 \end{condition}
 
@@ -232,7 +231,9 @@ In general terms, our conditions can be interpreted in three different ways:
 	\item \label{inter:rules} as rules governing the decision aiding process (rules that $i$ can commit to abide by, or can consider to be well-founded safeguards for the proper unfolding of the process).
 \end{enumerate}
 
-Some of the conditions of our theorems are arguably more congenial to a given interpretation. For example, it seems natural enough to interpret \cref{def:closed} as a rationality requirement of the kind that it makes sense to use as an axiom (interpretation \ref{inter:axioms}). By contrast, \cref{def:justifiableStrong} is the kind of condition that can easily be translated in the form of rules than decision-makers can be asked to abide by when they engage in a decision-aiding process (interpretation \ref{inter:rules}). \Cref{def:B.br,def:B.lg} can easily be seen as empirical hypotheses (interpretation \ref{inter:empir}).
+Some of the conditions of our theorems are arguably more congenial to a given interpretation. For example, it seems natural enough to interpret \cref{def:closed} as a rationality requirement of the kind that it makes sense to use as an axiom (interpretation \ref{inter:axioms}). 
+By contrast, \cref{def:justifiableStrong} is the kind of condition that can easily be translated in the form of rules than decision-makers can be asked to abide by when they engage in a decision-aiding process (interpretation \ref{inter:rules}). 
+\Cref{def:B.br,def:B.lg} can easily be seen as empirical hypotheses (interpretation \ref{inter:empir}).
 
 We do not want, here, to take a rigid stance on which interpretation or mix of interpretations should be preferred. Our point is rather to stress that, whatever the chosen interpretation, it has implications for analysts implementing deliberation and DMV in practice. If the conditions are understood as axioms \ref{inter:axioms}, analysts have to be able to entrench their justifiability. This might be possible, at least in some cases, for \cref{def:closed}, but this is much more questionable for the other conditions. If the conditions are understood as empirical hypotheses, then analysts have to be able to empirically test them, which raises unsettled difficulties falling well beyond the scope of the present article. Lastly, if they are understood as \ref{inter:rules}, then, even more than through the process of operational validity checking, the analyst is engaged in an active interaction with and modification of his object study, that is should be able to account for and justify.
 
