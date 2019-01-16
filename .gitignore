@@ -13,6 +13,7 @@ delibenv.pdf
 #*.fot
 #*.cb
 #*.cb2
+*.thm
 
 ## Bibliography auxiliary files (bibtex/biblatex/biber):
 *.bbl
