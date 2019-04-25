@@ -18,6 +18,16 @@
 
 %\journalname{}
 
+%I find these settings useful in draft mode. Should be removed for final versions.
+	%Which line breaks are chosen: accept worse lines, therefore reducing risk of overfull lines. Default = 200.
+		\tolerance=2000
+	%Accept overfull hbox up to...
+		\hfuzz=2cm
+	%Reduces verbosity about the bad line breaks.
+		\hbadness 5000
+	%Reduces verbosity about the underful vboxes.
+		\vbadness=1300
+
 \begin{document}
 \title{Deliberation and environmental decision}
 \author{Yves Meinard \and Olivier Cailloux}
@@ -415,7 +425,11 @@ Our more modest claim is to have introduced an approach that allows to go deeper
 We thank xxxx for very helpful comments.
 \end{acknowledgements}
 
+%TODO remove for final version
+	%Which line breaks are chosen: accept worse lines, therefore reducing risk of overfull lines. Default = 200.
+		\tolerance=10000
+	%Reduces verbosity about the bad line breaks.
+		\hbadness 10000
+
 \bibliography{beliefs,philo-eco,deliber,manual}
-
-
 \end{document}
