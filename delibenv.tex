@@ -144,7 +144,8 @@ We want to carve out a formal representation of the stance that an individual ha
 Following \citet{cailloux_formal_2018}, let us call this the individual's \ac{DJ}. 
 This reference to deliberation captures, in our view, two central ideas.
 
-The first idea is that deliberated judgments are the result of a careful examination of arguments and counter-arguments: through deliberation, the individual gathers new information, he learns about the viewpoints of other people, he takes the time to think about all these elements, which are all arguments for or against this or that stance. 
+The first idea is that deliberated judgments are the result of a careful examination of arguments and counter-arguments: through deliberation, the individual gathers new information, he learns about the viewpoints of other people, he takes the time to think about all these elements, 
+which are all arguments for or against this or that stance. 
 This idea echoes the approach to the notion of rationality developed most prominently by \citet{habermas_theorie_1981}. 
 In his approach, actions, attitudes or utterances can be termed “rational” so long as the actor performing or having them can account for them, explain them and use arguments and counter-arguments to withstand criticisms that other people could raise against them. 
 Variants of this vision of rationality play a key role in other prominent philosophical frameworks, such as \citeauthor{scanlon_what_2000}’s \citeyearpar{scanlon_what_2000} and \citeauthor{sen_idea_2009}’s \citeyearpar{sen_idea_2009}. 
@@ -155,7 +156,7 @@ For simplicity's sake, we will simply talk about ``rationality'' to refer to thi
 The second idea is that deliberated judgments are nevertheless the individual's own judgments, in the sense that they do not reflect the application of any exogenous criterion. 
 This second idea will be nicknamed ``anti-paternalism'' in what follows. 
 
-Let us attempt to formalize these ideas. 
+\citet{cailloux_formal_2018} propose a formalization of these ideas. We present here this formalization in a simplified, verbal form. 
 Let us assume that a decision-maker is given -- call her $i$ -- together with a topic $T$, about which $i$ wants to make up her mind. 
 Let us then define $\allargs$ as a set that contains all the arguments that one can make use of when trying to make up one’s mind about $T$.
 Elaborate typologies of the kinds of arguments involved in environmental deliberations have been developed in the literature, for example by \citet{chateauraynaud_contrainte_2007}. 
@@ -182,21 +183,22 @@ We however assume that $¬(\ar_2 \ibeatse \ar_1) ⇒ \ar_2 \nibeatse \ar_1$: if 
 
 Let us emphasize that here we are concerned with how $i$ sees the arguments $\ar_2$ and $\ar_1$, not about whether $\ar_2$ should be considered a good argument to trump $\ar_1$ by any independent standard. 
 
-Let us now define $\ibeatsst$ as $\ar_2 \ibeatsst \ar_1 ⇔ ¬(\ar_2 \nibeatse \ar_1)$ ($\ar_2 \ibeatsst \ar_1$ if and only if $\ar_2$ always trumps $\ar_1$), and $\ar_2 \nibeatsst \ar_1 ⇔ ¬(\ar_2 \ibeatse \ar_1)$ ($\ar_2$ never trumps $\ar_1$). This enables us to define a decisive argument as one that is never trumped by any argument belonging to $\allargs$.
-\begin{definition}[Decisive argument]
-	\label{def:decisiveargument}
-	Given a decision situation $(T, \allargs, {\ileadsto}, {\ibeatse}, {\nibeatse})$, we say that an argument $\ar \in \allargs$ is \emph{decisive} iff, $\forall \ar' \in \allargs$: $\ar' \nibeatsst \ar$.
-\end{definition}
+Let us now define $\ibeatsst$ as $\ar_2 \ibeatsst \ar_1 ⇔ ¬(\ar_2 \nibeatse \ar_1)$ ($\ar_2 \ibeatsst \ar_1$ if and only if $\ar_2$ always trumps $\ar_1$), and $\ar_2 \nibeatsst \ar_1 ⇔ ¬(\ar_2 \ibeatse \ar_1)$ ($\ar_2$ never trumps $\ar_1$). 
+This enables us to define a decisive argument as one that is never trumped by any argument belonging to $\allargs$.
+%\begin{definition}[Decisive argument]
+%	\label{def:decisiveargument}
+%	Given a decision situation $(T, \allargs, {\ileadsto}, {\ibeatse}, {\nibeatse})$, we say that an argument $\ar \in \allargs$ is \emph{decisive} iff, $\forall \ar' \in \allargs$: $\ar' \nibeatsst \ar$.
+%\end{definition}
  
 An argument can be so straightforward that it would always be accepted by $i$, whatever opposite argument is given: this would then be a decisive argument. At the opposite end of the spectrum, an argument can be decisive thanks to its anticipation of numerous counter-arguments. (We will assume there is a systematic way to build such elaborate argument using, mainly, \cref{def:closed}.)
 
 Given a decision situation, we are now in a position to characterize $i$'s stance towards the propositions in the topic $T$ once he has considered all the relevant arguments. 
 We say that a proposition is acceptable if it is supported by a decisive argument. 
 
-\begin{definition}[Acceptable proposition]
-	\label{def:acceptreject}
-	Given a decision situation $(T, \allargs,\allowbreak {\ileadsto},\allowbreak {\ibeatse}, {\nibeatse})$, a proposition $t$ is \emph{acceptable} iff $\exists \ar \in \allargs \suchthat \ar \ileadsto t \text{ and } \forall \ar': \ar' \nibeatsst \ar$.
-\end{definition}
+%\begin{definition}[Acceptable proposition]
+%	\label{def:acceptreject}
+%	Given a decision situation $(T, \allargs,\allowbreak {\ileadsto},\allowbreak {\ibeatse}, {\nibeatse})$, a proposition $t$ is \emph{acceptable} iff $\exists \ar \in \allargs \suchthat \ar \ileadsto t \text{ and } \forall \ar': \ar' \nibeatsst \ar$.
+%\end{definition}
 
 This definition echoes \citeauthor{rawls_political_2005}’ \citeyearpar{rawls_political_2005} emphasis on the requirement of \emph{acceptability} by reasonable citizens. 
 Indeed, our choice of vocabulary is not an innocent one.
@@ -210,14 +212,14 @@ Notice also that, according to our definition, it is possible for a proposition 
 To our best knowledge, the philosophical literature elaborating on Rawls' approach to reasonableness and acceptability did not investigate this point, despite its being a natural implication of the notion of acceptability. 
 This means that the notion of acceptability does not exclude the possibility that, on due reflexion, $i$ might admit that both $t$ and its opposite are acceptable in some cases, because in these specific cases it is possible to construct convincing arguments \emph{in utramque partem} (to use the vocabulary of Humanist \emph{ars rhetorica} \citep{skinner_reason_1996}), or because $i$ does not see significant differences between $t$ and $¬t$ (think about the story of Buridan’s ass).
 
-Based on the definitions above, we can now define $i$'s \ac{DJ} as those propositions $t \in T$ that are acceptable. \begin{definition}[\ac{DJ} of $i$]
-\label{def:acceptable}
-	The \acl{DJ} corresponding to a decision situation $(T, \allargs, {\ileadsto}, {\ibeatse}, {\nibeatse})$ is:
-	\begin{equation}
-		\label{eq:DJ-u}
-		T_i = \set{t \in T \suchthat t \text{ is acceptable}}.
-	\end{equation}
-\end{definition}
+Based on the definitions above, we can now define $i$'s \ac{DJ} as those propositions $t \in T$ that are acceptable. %\begin{definition}[\ac{DJ} of $i$]
+%\label{def:acceptable}
+%	The \acl{DJ} corresponding to a decision situation $(T, \allargs, {\ileadsto}, {\ibeatse}, {\nibeatse})$ is:
+%	\begin{equation}
+%		\label{eq:DJ-u}
+%		T_i = \set{t \in T \suchthat t \text{ is acceptable}}.
+%	\end{equation}
+%\end{definition}
 
 This series of definitions defines precisely when exposure to arguments is enough to consider that someone’s stance has been formed and informed by deliberation. 
 This is in our view a \emph{sine qua non} condition to be able to spell out clearly an answer to the question raised by the first blindspot of the current literature on DMV: when can we admit that we have reached deliberated stances?
@@ -225,24 +227,24 @@ This is in our view a \emph{sine qua non} condition to be able to spell out clea
 Moreover, tackling the two blindspots of deliberative approaches identified previously would require explicitly thinking a procedure to be performed by an analyst to capture deliberated stances. Our formal framework is useful to outline the first steps of such an endeavour.
 
 As in any empirical scientific approach, the analyst concerned to identify $i$'s \ac{DJ} will start its interaction with $i$ with a \emph{model} $\eta$, which we define as a pair $(\mleadsto, \mbeats)$ (detailing how the analyst could elaborate such a model falls beyond our scope in this article). 
-Let us then define $T_\eta$ as the set of propositions that the model $\eta$ claims are supported:
-\begin{equation}
-	T_\eta = {\mleadsto}(\allargs) = \set{t \in T \suchthat \exists \ar \in \allargs \suchthat \ar \mleadsto t}.
-\end{equation}
+Let us then define $T_\eta$ as the set of propositions that the model $\eta$ claims are supported.%:
+%\begin{equation}
+%	T_\eta = {\mleadsto}(\allargs) = \set{t \in T \suchthat \exists \ar \in \allargs \suchthat \ar \mleadsto t}.
+%\end{equation}
 
 The analyst is concerned to identify $i$’s \ac{DJ}. Therefore, a valid model for him will be one that correctly captures $T_i$ (and not necessarily one that mimicks $\ileadsto$ and $\ibeatse$).
 
-\begin{definition}[Validity]
-\label{valid}
-	A model $\eta$ is valid iff $T_\eta=T_i$.
-\end{definition}
+%\begin{definition}[Validity]
+%\label{valid}
+%	A model $\eta$ is valid iff $T_\eta=T_i$.
+%\end{definition}
 
 Let us now define the following “operational” validity criterion for a model $\eta$ intended to capture $i$'s \ac{DJ}. We term it “operational” to emphasize that, as opposed to validity (\cref{valid}), operational validity can be falsified on the sole basis of observable data.
 
-\begin{definition}[Operational validity criterion]
-	\label{def:validity}
-	A model $\eta$ of a decision situation is operationally valid iff, whenever $(\ar \mleadsto t)$, it holds that $[\ar \ileadsto t]$ and $[\forall \ar_c \in \allargs: (\ar_c \nibeatse \ar) ∨ (\exists \ar_{cc} \mbeats \ar_c ∧ \ar_{cc} \ibeatse \ar_c)]$, and whenever $t$ is not supported by $\eta$, $\forall \ar \ileadsto t: \exists \ar_c \mbeats \ar ∧ \ar_c \ibeatse \ar$.
-\end{definition}
+%\begin{definition}[Operational validity criterion]
+%	\label{def:validity}
+%	A model $\eta$ of a decision situation is operationally valid iff, whenever $(\ar \mleadsto t)$, it holds that $[\ar \ileadsto t]$ and $[\forall \ar_c \in \allargs: (\ar_c \nibeatse \ar) ∨ (\exists \ar_{cc} \mbeats \ar_c ∧ \ar_{cc} \ibeatse \ar_c)]$, and whenever $t$ is not supported by $\eta$, $\forall \ar \ileadsto t: \exists \ar_c \mbeats \ar ∧ \ar_c \ibeatse \ar$.
+%\end{definition}
 
 This criterion amounts to partially comparing, on the one hand, $i$'s stances towards propositions and arguments, and on the other, $\eta$'s representations of $i$’s stances. 
 More precisely, a model satisfies the operational validity criterion (for short: is operationally valid) iff:
@@ -265,13 +267,13 @@ These two restrictions can be relaxed without much difficulty.
 
 Our first condition assumes that $i$ possibly changes her mind about whether an argument $\ar'$ trumps another one only when there exists another argument trumping $\ar'$. 
 
-\begin{condition}[Justifiable unstability]
-	\label{def:justifiableStrong}
-	A decision situation $(T, \allargs, {\ileadsto}, {\ibeatse}, {\nibeatse})$ is \emph{justifiably unstable} iff, for all pairs of arguments $(\ar, \ar')$:
-	\begin{equation}
-		\ar' \ibeatse \ar \text{ and } \ar' \nibeatse \ar ⇒ \exists \ar_c \suchthat \ar_c \ibeatse \ar'.
-	\end{equation}
-\end{condition}
+%\begin{condition}[Justifiable unstability]
+%	\label{def:justifiableStrong}
+%	A decision situation $(T, \allargs, {\ileadsto}, {\ibeatse}, {\nibeatse})$ is \emph{justifiably unstable} iff, for all pairs of arguments $(\ar, \ar')$:
+%	\begin{equation}
+%		\ar' \ibeatse \ar \text{ and } \ar' \nibeatse \ar ⇒ \exists \ar_c \suchthat \ar_c \ibeatse \ar'.
+%	\end{equation}
+%\end{condition}
 
 Our second condition has to do with the way $i$ reasons. 
 Imagine that $i$ finds himself in the following situation. 
@@ -279,31 +281,31 @@ He declares that $\ar_1$ is trumped by $\ar_2$.
 However, $i$ is also ready to declare that $\ar_2$ is in turn trumped by $\ar_3$, a decisive argument. 
 Clearly, in such a situation, $i$'s credence in the strength of $\ar_2$ appears fragile. 
 It therefore seems natural enough to assume that, if we carve out an argument $\ar$, playing the same argumentative role as $\ar_1$, but anticipating and defeating the tentative by $\ar_2$ of trumping $\ar_1$, $i$ will endorse $\ar$. 
-This assumption is formalized by the condition Closed under reinstatement, below. 
+This assumption is formalized by the condition Closed under reinstatement.%, below. 
 To write it down, we first need to formalize, thanks to the following notion of \emph{replacement}, the idea that a set of arguments plays an argumentative role similar to the one of another argument. 
 We say a set of arguments $\args \subseteq \allargs$ replaces an argument $\ar \in \allargs$ whenever all arguments trumped by $\ar$ are also trumped by some argument $\ar' \in \args$, and all propositions supported by $\ar$ are also supported by some argument $\ar' \in \args$. 
 %(At this stage, all we need is a means to formalize the idea of a single argument replacing another argument, but we will need the notion of a set of replacers later.)
-\begin{definition}[Replacing arguments]
-	A set of arguments $\args \subseteq \allargs$ \emph{replaces} $\ar \in \allargs$ iff ${\ibeatse}(\ar) \subseteq {\ibeatse}(\args)$ and ${\ileadsto}(\ar) \subseteq {\ileadsto}(\args)$. 
-	We say that $\ar'$ replaces $\ar$, with $\ar, \ar' \in \allargs$, to mean that $\{\ar'\}$ replaces $\ar$.
-\end{definition}
+%\begin{definition}[Replacing arguments]
+%	A set of arguments $\args \subseteq \allargs$ \emph{replaces} $\ar \in \allargs$ iff ${\ibeatse}(\ar) \subseteq {\ibeatse}(\args)$ and ${\ileadsto}(\ar) \subseteq {\ileadsto}(\args)$. 
+%	We say that $\ar'$ replaces $\ar$, with $\ar, \ar' \in \allargs$, to mean that $\{\ar'\}$ replaces $\ar$.
+%\end{definition}
 	
-\begin{condition}[Closed under reinstatement]
-	\label{def:closed}
-	A decision situation $(T, \allargs, {\ileadsto}, {\ibeatse}, {\nibeatse})$ is \emph{closed under reinstatement} iff, $\forall \ar_1 ≠ \ar_2 ≠ \ar_3 ≠ \ar_1 \in \allargs$ such that $\ar_3 \ibeatsst \ar_2 \ibeatse \ar_1$, with $\ar_3$ decisive:
-	\begin{equation}
-		\exists \ar \suchthat \ar \text{ replaces } \ar_1 \text{ and } {\ibeatseinv}(\ar) \subseteq \ibeatseinv(\ar_1) \setminus \{\ar_2\}.
-	\end{equation}
-\end{condition}
+%\begin{condition}[Closed under reinstatement]
+%	\label{def:closed}
+%	A decision situation $(T, \allargs, {\ileadsto}, {\ibeatse}, {\nibeatse})$ is \emph{closed under reinstatement} iff, $\forall \ar_1 ≠ \ar_2 ≠ \ar_3 ≠ \ar_1 \in \allargs$ such that $\ar_3 \ibeatsst \ar_2 \ibeatse \ar_1$, with $\ar_3$ decisive:
+%	\begin{equation}
+%		\exists \ar \suchthat \ar \text{ replaces } \ar_1 \text{ and } {\ibeatseinv}(\ar) \subseteq \ibeatseinv(\ar_1) \setminus \{\ar_2\}.
+%	\end{equation}
+%\end{condition}
 
 Finally, we restrict the maximal size of chains of arguments and counter-arguments.
 We talk about a chain of length $k$ in $\ibeatse$ to refer to a finite sequence $\ar_i$ in $\allargs$, $1 ≤ i ≤ k$, such that $\ar_i \ibeatse \ar_{i + 1}$ for $1 ≤ i ≤ k - 1$. 
 An infinite chain is an infinite sequence $\ar_i$ such that $\ar_i \ibeatse \ar_{i + 1}$ for all $i \in \N$. (We do not mandate that chains be transitively closed.) 
 
-\begin{condition}[Boundedness]
-\label{def:B}
+%\begin{condition}[Boundedness]
+%\label{def:B}
 A decision situation $(T, \allargs, {\ileadsto}, {\ibeatse}, {\nibeatse})$ has a \emph{width bounded by $w$} iff there is no argument that is trumped by an infinite number of counter-arguments. It has a \emph{length bounded by $l$} iff there is no infinite chain of counter-arguments. (Cycles in $\ibeatse$ are therefore excluded as well.) It is bounded iff it has a bounded width and a bounded length.
-\end{condition}
+%\end{condition}
 
 The three conditions above establish a link between operational validity and validity thanks to the following theorem.
 
