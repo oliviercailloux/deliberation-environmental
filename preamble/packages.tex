@@ -110,9 +110,9 @@
 %hyperref doc says: “Package bookmark replaces hyperref’s bookmark organization by a new algorithm (...) Therefore I recommend using this package”.
 	\usepackage{bookmark}
 %Need to invoke hyperref explicitly to link to line numbers: \hyperlink{lintarget:mylinelabel}{\ref*{lin:mylinelabel}}, with \ref* to disable automatic link. Also see https://tex.stackexchange.com/q/428656 for referencing lines from another document.
-	%\usepackage{lineno}
+	\usepackage{lineno}
 	%\NewDocumentCommand{\llabel}{m}{\hypertarget{lintarget:#1}{}\linelabel{lin:#1}}
-	%\setlength\linenumbersep{9mm}
+	\setlength\linenumbersep{22mm}
 %For complex authors blocks. Seems like authblk wants to be later than hyperref, but sooner than silence. See https://tex.stackexchange.com/q/475513 for the patch to hyperref pdfauthor.
 	\ExplSyntaxOn
 	\seq_new:N \g_oc_hrauthor_seq

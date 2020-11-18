@@ -30,6 +30,7 @@
 	%Reduces verbosity about the underful vboxes.
 		\vbadness=1300
 
+\linenumbers
 \begin{document}
 \title{Deliberation and environmental decision}
 \author{Yves Meinard \and Olivier Cailloux}
@@ -90,7 +91,7 @@ Our aim in this article is to highlight the importance of two of these remaining
 
 A first problem has to do with the fact that authors on DMV vary in the answer they give to a very basic question: should deliberation lead to a consensus? Some authors (e.g. \citet{vatn_institutional_2009}) claim that the point of exchanges of arguments and interactions during deliberation is to reach a mutual understanding of environmental problems and to identify a common solution, or even a single social WTP \citep{orchard-webb_deliberative_2016}. The underlying idea that deliberation is conducive to consensus is often presented as a basic tenet of deliberative democracy theory \citep{wilson_discourse-based_2002}. 
 However, this idea is challenged by two important objections.
-The first one is that there can exist deep moral disagreements \citep{dryzek_deliberative_2013} between some people or groups, and it might prove neither possible nor desirable to heal such disagreements.
+The first one is that there can exist deep moral disagreements \citep{dryzek_deliberative_2013} between some people or groups, and it might prove neither possible nor desirable to heal such disagreements.\commentOC{Impossible or not desirable, je dirais.}
 The second one is that unanimity can reflect exclusion and power dynamics \citep{elster_sour_1983,volker_exploring_2016,vargas_background_2016,vargas_problem_2017,murphy_comparing_2017} rather than a normatively meaningful convergence of views.
 \citeauthor{bartkowski_beyond_2018} contrast this consensus tenet with the notion of a ``plurality of impartial reasons'' championed by \citet{sen_idea_2009}.
 This stance leads them to defend an approach to DMV where consensus is neither required nor expected. Such an approach might seem more open-minded than the doctrine that deliberation unavoidably generates consensus. However, it evades a crucial question: when can one consider that there has been \emph{enough} deliberation? 
@@ -123,6 +124,8 @@ The reference to deliberation captures, in our view, two central ideas.
 The first idea is that \acp{DJ} are the result of a careful examination of arguments and counter-arguments: through deliberation, the individual gathers new information, learns about the viewpoints of other people, and takes the time to think about all these elements, 
 which are all arguments for or against this or that stance. 
 This idea echoes the approach to the notion of rationality developed by \citet{habermas_theorie_1981}. 
+\commentRa{At the end of the second paragraph in this section, you refer to “rationality” – I’m not sure that using this particular term is a good idea strategically, given the usual connotation of this term in economics, including DMV. You could borrow from Scanlon or Sen instead, or you could add some adjective to “rationality” in order to make clear that you don’t mean rationality sensu rational choice theory.}
+\commentOCf{Je ne vois pas précisément ce que R1 suggère qu’on emprunte à Scanlon et Sen mais c’est peut-être une piste à explorer. Indépendamment, je trouverais très ennuyeux de laisser le concept utile de rationalité, et le terme pour le décrire, à la vision étriquée des économistes de ce terme. Peut-être pourrions-nous préciser qqch. comme : “In this manuscript, when using the term rationality, we mean rationality in the wide sense described in this paragraph, in contrast to the narrow version of rationality used in a part of the economic literature.”}
 In his approach, actions, attitudes or utterances are rational if and only if the actor performing or having them can account for them, explain them and use arguments and counter-arguments to withstand criticisms that other people could raise against them. 
 Variants of this vision of rationality play a key role in other prominent philosophical frameworks, such as \citeauthor{scanlon_what_2000}’s \citeyearpar{scanlon_what_2000} and \citeauthor{sen_idea_2009}’s \citeyearpar{sen_idea_2009}. 
 %(Using Sen's vocabulary, \citeauthor{bartkowski_beyond_2018} talk about ``reasonableness'' to stress the interpersonal aspect of this idea. 
@@ -131,8 +134,8 @@ For simplicity's sake, we will simply talk about ``rationality'' to refer to thi
 
 The second idea is that \acp{DJ} are nevertheless the individual's own judgments, in the sense that they do not reflect the application of any exogenous criterion. 
 This second idea will be nicknamed ``anti-paternalism'' in what follows. 
-
-
+\commentRa{Regarding the concept of “anti-paternalism”: What is the relationship (if any) of this concept to Arrow’s (and, more broadly, social choice theory’s) non-dictatorship?}
+\commentOCf{Il y a certes un lien, mais il me semble lointain et je vois peu d’utilité d’insister sur cet aspect dans cet article. R1 a un lien plus général en tête avec le cadre d’Arrow (cf. autre commentaire un peu plus loin), mais je ne le comprends pas. Je propose de laisser tomber, si ça ne te parle pas plus.}
 
 Let us assume that a decision-maker is given -- call her $i$ -- together with a topic $\allprops$, about which $i$ wants to make up her mind. 
 Let us then define $\allargs$ as a set that contains all the arguments that one can make use of when trying to make up one’s mind about $\allprops$.
@@ -142,7 +145,11 @@ By using here a very abstract notion of argument, we aim to encompass all the di
 Using these notions, we want to define $i$’s stance towards the topic once a deliberation has allowed her to ponder all the arguments possibly relevant to the situation. 
 Thus, we want to study changes of mind of $i$ (or the lack thereof).
 
-This is done by defining three relations, which we assume are partially observable. We say that an argument $\ar$ supports a proposition $\prop \in T$ when $i$ declares that $\ar$ is an argument in favor of the proposition. We say that an argument $\ar$ \emph{sometimes trumps} another argument $\ar'$ when $i$ sometimes declares, upon seeing $\ar$, that in her current state of mind, $\ar'$ is not a valid argument for some of the propositions it claims to support or some of the propositions it claims to trump. We use the word ``sometimes'' because $i$ may change her mind during the process of being confronted with various arguments: she might initially, for example, state that $\ar$ does not trump $\ar'$, but then, after having seen a third argument which lets her better understand the content of $\ar$, declare that $\ar$ trumps $\ar'$. Finally, we say that an argument $\ar$ sometimes does not trump another argument $\ar'$ when $i$ sometimes declares, upon seeing $\ar$, that in her current state of mind, $\ar'$ is a valid argument for all the propositions it claims to support, and a valid argument against all the propositions it claims to trump. (Thus, in the previous example, it would hold that $\ar$ sometimes trumps $\ar'$ and $\ar$ sometimes does not trump $\ar'$.)
+This is done by defining three relations, which we assume are partially observable. We say that an argument $\ar$ supports a proposition $\prop \in T$ when $i$ declares that $\ar$ is an argument in favor of the proposition. We say that an argument $\ar$ \emph{sometimes trumps} another argument $\ar'$ when $i$ sometimes declares, upon seeing $\ar$, that in her current state of mind, $\ar'$ is not a valid argument for some of the propositions it claims to support. We use the word ``sometimes'' because $i$ may change her mind during the process of being confronted with various arguments: she might initially, for example, state that $\ar$ does not trump $\ar'$, but then, after having seen a third argument which lets her better understand the content of $\ar$, declare that $\ar$ trumps $\ar'$. Finally, we say that an argument $\ar$ sometimes does not trump another argument $\ar'$ when $i$ sometimes declares, upon seeing $\ar$, that in her current state of mind, $\ar'$ is a valid argument for all the propositions it claims to support, and a valid argument against all the arguments it claims to trump. (Thus, in the previous example, it would hold that $\ar$ sometimes trumps $\ar'$ and $\ar$ sometimes does not trump $\ar'$.)
+\commentRa{you use the term “to trump” both in relation to propositions and arguments, which I find somewhat confusing. It’s clear what you mean by one argument trumping another; but what does an argument trumping a proposition mean? Disproving it? Supporting a counter-proposition?}
+\commentOCf{R1 a raison, c’était peu clair, et je pense qu’il s’agissait d’une maladroitesse de notre part. On n’a pas besoin du concept d’un argument qui trumpe une proposition, seulement de trumper d’autres arguments. J’ai enlevé les références au trumpage de proposition ici (il faudrait vérifier à l’occasion qu’il n’y en a pas d’autres).}
+\commentRa{from the perspective of social choice theory: in your framework, independence of irrelevant alternatives does not hold, correct?}
+\commentOCf{Ce que R1 a en tête a l’air amusant, mais je ne comprends pas. Que sont d’après lui ces différentes relations de préférence qu’on aggrégerait ?}
 
 These relations permit to define $i$'s \ac{DJ}: it consists of all and only the propositions that are supported by at least one argument $\ar$ that is never trumped by any other argument (thus, an argument $\ar$ such that it never holds that $\ar'$ sometimes trumps $\ar$, for any $\ar'$ in $\allargs$). Those propositions are called acceptable. This definition echoes \possessivecite{rawls_political_2005} emphasis on the requirement of \emph{acceptability} by reasonable citizens. 
 
@@ -154,6 +161,7 @@ These relations permit to define $i$'s \ac{DJ}: it consists of all and only the 
 %\end{remark}
 
 This series of definitions determines precisely when exposure to arguments is enough to consider that someone’s stance has been formed and informed by deliberation. The formal framework thereby takes a clear position on the \emph{aim of the deliberation issue}.
+\commentRa{here for the first time I was asking myself what the practical consequences/implications are. Your manuscript is not exactly rich in them…}
 
 \subsection{A procedure to address the \emph{role of the analyst} issue}
 Addressing the \emph{role of the analyst} issue, and clarifying thereby how to determine if deliberation has reached its aim in practice,  require explicitly defining a procedure to be performed by the analyst who wants to capture deliberated stances. \citet{cailloux_formal_2018}'s framework outlines such a procedure, which consists in a process of testing \emph{models} of \acp{DJ}. A model of $i$'s \ac{DJ} (given a topic $\allprops$ and a set of arguments $\allargs$) is defined as a series of hypotheses concerning the propositions that are in $i$'s \ac{DJ} and the arguments that support these propositions in $i$'s view, together with an argumentative strategy, i.e. hypotheses concerning counter-arguments and means to counter them.
