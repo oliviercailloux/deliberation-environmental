@@ -57,6 +57,7 @@ ENTRY
     author
     booktitle
     chapter
+    doi
     edition
     editor
     eid
@@ -366,6 +367,13 @@ FUNCTION {format.url}
   duplicate$ empty$
     { pop$ "" }
     { "\urlprefix\url{" swap$ * "}" * }
+  if$
+}
+
+FUNCTION {format.doi}
+{ doi empty$
+    { "" }
+    { "\doi{" doi * "}" * }
   if$
 }
 
@@ -959,6 +967,8 @@ FUNCTION {article}
     { format.journal.eid }
   if$
   new.block
+  format.doi output
+  new.block
   format.url output
   new.block
   format.note output
@@ -994,6 +1004,8 @@ FUNCTION {book}
   if$
   format.edition output
   new.block
+  format.doi output
+  new.block
   format.url output
   new.block
   format.note output
@@ -1009,6 +1021,8 @@ FUNCTION {booklet}
   new.block
   howpublished "howpublished" bibinfo.check output
   address "address" bibinfo.check output
+  new.block
+  format.doi output
   new.block
   format.url output
   new.block
@@ -1050,6 +1064,8 @@ FUNCTION {inbook}
   format.edition output
   format.pages "pages" output.check
   new.block
+  format.doi output
+  new.block
   format.url output
   new.block
   format.note output
@@ -1078,6 +1094,8 @@ FUNCTION {incollection}
     }
   if$
   format.pages "pages" output.check
+  new.block
+  format.doi output
   new.block
   format.url output
   new.block
@@ -1109,6 +1127,8 @@ FUNCTION {inproceedings}
   if$
   format.pages "pages" output.check
   new.block
+  format.doi output
+  new.block
   format.url output
   new.block
   format.note output
@@ -1126,6 +1146,8 @@ FUNCTION {manual}
   organization "organization" bibinfo.check output
   address "address" bibinfo.check output
   format.edition output
+  new.block
+  format.doi output
   new.block
   format.url output
   new.block
@@ -1146,6 +1168,8 @@ FUNCTION {mastersthesis}
   school "school" bibinfo.warn output
   address "address" bibinfo.check output
   new.block
+  format.doi output
+  new.block
   format.url output
   new.block
   format.note output
@@ -1161,6 +1185,8 @@ FUNCTION {misc}
   format.title output
   new.block
   howpublished "howpublished" bibinfo.check output
+  new.block
+  format.doi output
   new.block
   format.url output
   new.block
@@ -1179,6 +1205,8 @@ FUNCTION {phdthesis}
   bbl.phdthesis format.thesis.type output.nonnull
   school "school" bibinfo.warn output
   address "address" bibinfo.check output
+  new.block
+  format.doi output
   new.block
   format.url output
   new.block
@@ -1203,6 +1231,8 @@ FUNCTION {proceedings}
     }
   if$
   new.block
+  format.doi output
+  new.block
   format.url output
   new.block
   format.note output
@@ -1222,6 +1252,8 @@ FUNCTION {techreport}
   institution "institution" bibinfo.warn output
   address "address" bibinfo.check output
   new.block
+  format.doi output
+  new.block
   format.url output
   new.block
   format.note output
@@ -1235,6 +1267,8 @@ FUNCTION {unpublished}
   format.date "year" output.check
   date.block
   format.title "title" output.check
+  new.block
+  format.doi output
   new.block
   format.url output
   new.block
