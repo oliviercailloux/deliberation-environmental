@@ -2,8 +2,6 @@
 \RequirePackage[l2tabu, orthodox]{nag}
 %\documentclass[smallextended,nospthms,natbib]{svjour3}
 \documentclass[version=3.21, pagesize, twoside=off, bibliography=totoc, DIV=calc, fontsize=12pt, a4paper, french, english]{scrartcl}
-%\newcommand{\institute}[1]{}
-\newcommand{\keywords}[1]{}
 \newenvironment{acknowledgements}{
 	\section*{Acknowledgements}
 }{
@@ -23,31 +21,51 @@
 \author{Yves Meinard}
 \author{Olivier Cailloux}
 \affil{Université Paris-Dauphine, PSL Research University, CNRS, LAMSADE, 75016 PARIS, FRANCE\\
-	\href{mailto:yves.meinard@dauphine.fr}{yves.meinard@dauphine.fr}
+	\href{mailto:yves.meinard@dauphine.fr}{yves.meinard@dauphine.fr}\\
+	\href{mailto:olivier.cailloux@dauphine.fr}{olivier.cailloux@dauphine.fr}
 }
+%\keywords{Keywords: } 
+
 \makeatletter
 	\hypersetup{
-		pdfsubject={preference},
-		pdfkeywords={decision aid, justification, empirical validation, methodology}
+		pdfsubject={deliberation},
+		pdfkeywords={valuation, decision support, justification, empirical validation, methodology}
 	}
 \makeatother
 
 \maketitle
 
-\keywords{Keywords: valuation, decision support, justification, empirical validation, methodology} 
+\selectlanguage{french} 
+\begin{abstract}
+Une littérature importante considère les faiblesses des méthodes de préférence révélées utilisées pour évaluer les biens et services environnementaux hors marché, telles que l’évaluation contingente et les expériences de choix. L’\ac{ÉMD} a émergé en tant qu’alternative de premier plan aux versions standards de ces méthodes. Elle adjoint aux institutions délibératives des techniques d’élicitation de préférences.
+Malgré un ancrage dans une litérature philosophique extensive concernant la démocracie délibérative, les fondements théoriques de l’\ac{ÉMD} restent trop peu étudiés, à l’exception notable des efforts de \citet{bartkowski_beyond_2018}, qui utilisent l’approche philosophique de Sen pour élaborer de tels fondements.
+La présente contribution conceptuelle poursuit cet effort théorique en pointant deux aspects laissés ouverts par la contribution mentionnée ci-dessus. Le premier est le rôle précis que la délibération est supposée jouer dans l’\ac{ÉMD} et plus généralement dans l’aide à la décision (nous appelons cet aspect le \emph{certificat de la délibération}) ; le second est le rôle que les économistes et consultants impliqués dans le déroulement de la délibération sont supposés jouer (un aspect que nous nommons le \emph{rôle de l’analyste}).
+Afin de clarifier la sorte d’investigations que l’\ac{ÉMD} ou une quelconque méthode alternative, devrait implémenter pour lever toute ambiguïté sur ces aspects, nous utilisons un cadre formel introduit par \citet{cailloux_formal_2019}, conçu pour capturer la posture adoptée par un individu sur un sujet donné après avoir participé à une délibération : son \emph{jugement délibéré}.
+Ce cadre permet d’identifier les questions empiriques auxquelles l’\ac{ÉMD} ne répond pas alors que de telles réponses seraient nécessaires à la clarification du positionnement de l’\ac{ÉMD} sur l’aspect du \emph{certificat de la délibération}.
+Quand au \emph{rôle de l’analyste}, notre cadre plaide en faveur de confier à l’analyste le rôle actif de création de ce que nous appelons des modèles de jugement délibéré.
+Ce cadre aide à charactériser les positions normatives adoptées lors de l’implémentation d’une approche délibérative.
 
+\textbf{Mots clés} : évaluation, aide à la décision, justification, validation empirique, méthodologie.
+\end{abstract}
+
+\selectlanguage{english} 
 \begin{abstract}
 A voluminous literature addresses the weaknesses of standard stated preference methods used to value non-market environmental goods and services, such as contingent valuation and choice experiment. 
-Deliberative monetary valuation (DMV) has emerged as a prominent alternative to the standard versions of these methods. It combines deliberative institutions with preference elicitation. 
-Despite an anchorage in an extensive philosophical literature on deliberative democracy, the theoretical foundations of DMV are underinvestigated.  
+\ac{DMV} has emerged as a prominent alternative to the standard versions of these methods. It combines deliberative institutions with preference elicitation. 
+Despite an anchorage in an extensive philosophical literature on deliberative democracy, the theoretical foundations of \ac{DMV} are underinvestigated.  
 A noteworthy exception is \citet{bartkowski_beyond_2018}’s effort to use \citeauthor{sen_idea_2009}’s philosophical views to elaborate such theoretical foundations. 
-The present conceptual contribution pursues this theoretical effort by pointing out two issues left unanswered by the above contribution: 
-the first issue is the precise role that deliberation is expected to play in DMV and, more broadly, in decision-making (we term this the \emph{deliberative credentials} issue); 
+The present conceptual contribution pursues this theoretical effort by pointing out two issues left unanswered by the above contribution. 
+The first issue is the precise role that deliberation is expected to play in \ac{DMV} and, more broadly, in decision-making (we term this the \emph{deliberative credentials} issue); 
 the second issue is the role that economists and consultants involved in the proceedings of deliberation are supposed to play (we term this the \emph{role of the analyst} issue). 
-In order to clarify the kind of investigations that DMV or any alternative method should implement to be unequivocal on these issues, we use a formal framework introduced by \citet{cailloux_formal_2019}, designed to capture the stance that an individual has on a given topic once she has participated in a deliberation: her “deliberated judgment”. 
-This framework allows to identify empirical questions that DMV do not tackle whereas answering these questions would be necessary to clarify the stance that DMV takes on the \emph{deliberative credential} issue. 
+In order to clarify the kind of investigations that \ac{DMV} or any alternative method should implement to be unequivocal on these issues, we use a formal framework introduced by \citet{cailloux_formal_2019}, designed to capture the stance that an individual has on a given topic once she has participated in a deliberation: her “deliberated judgment”. 
+This framework allows to identify empirical questions that \ac{DMV} do not tackle whereas answering these questions would be necessary to clarify the stance that \ac{DMV} takes on the \emph{deliberative credential} issue. 
 When it comes to the \emph{role of the analyst} issue, our framework advocates an active role of the practitioner in creating what we call models of \aclp{DJ}. 
 This framework helps to characterize the normative stance adopted when implementing a deliberative approach.
+%\bigskip
+
+\textbf{Keywords}: valuation, decision support, justification, empirical validation, methodology.
+
+\textbf{JEL Classification}: XXX, XXX
 \end{abstract}
 \acresetall
 
