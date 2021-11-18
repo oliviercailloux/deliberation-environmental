@@ -2,7 +2,7 @@
 \RequirePackage[l2tabu, orthodox]{nag}
 %\documentclass[smallextended,nospthms,natbib]{svjour3}
 \documentclass[version=3.21, pagesize, twoside=off, bibliography=totoc, DIV=calc, fontsize=12pt, a4paper, french, english]{scrartcl}
-\newcommand{\institute}[1]{}
+%\newcommand{\institute}[1]{}
 \newcommand{\keywords}[1]{}
 \newenvironment{acknowledgements}{
 	\section*{Acknowledgements}
@@ -18,39 +18,19 @@
 
 %\journalname{}
 
-%I find these settings useful in draft mode. Should be removed for final versions.
-	%Which line breaks are chosen: accept worse lines, therefore reducing risk of overfull lines. Default = 200.
-		\tolerance=2000
-	%Accept overfull hbox up to...
-		\hfuzz=2cm
-	%Reduces verbosity about the bad line breaks.
-		\hbadness 5000
-	%Reduces verbosity about the underful vboxes.
-		\vbadness=1300
-
-\linenumbers
 \begin{document}
 \title{Deliberation in valuation and decision making: a conceptual clarification}
-%\author{Yves Meinard \and Olivier Cailloux}
-\author{}
-%\institute{
-%	Yves Meinard
-%	\and
-%	Olivier Cailloux 
-%	\at 
-%	Université Paris-Dauphine, \\
-%	PSL Research University, \\
-%	CNRS, \\
-%	LAMSADE\\
-%	75016 PARIS, FRANCE\\
-%	\email{olivier.cailloux@dauphine.fr}
-%}
-%\makeatletter
-%	\hypersetup{
-%		pdfsubject={preference},
-%		pdfkeywords={decision aid, justification, empirical %validation, methodology}
-%	}
-%\makeatother
+\author{Yves Meinard}
+\author{Olivier Cailloux}
+\affil{Université Paris-Dauphine, PSL Research University, CNRS, LAMSADE, 75016 PARIS, FRANCE\\
+	\href{mailto:yves.meinard@dauphine.fr}{yves.meinard@dauphine.fr}
+}
+\makeatletter
+	\hypersetup{
+		pdfsubject={preference},
+		pdfkeywords={decision aid, justification, empirical validation, methodology}
+	}
+\makeatother
 
 \maketitle
 
